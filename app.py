@@ -68,7 +68,10 @@ def get_lipoprotein_a_quintile(value):
         return 5
 
 # Streamlit app
-st.title("Women's 3 Variable 30 Year Risk Estimator :red_heart:" )
+st.set_page_config(
+    page_title="Women's 3 Variable 30 Year Risk Estimator",
+    page_icon="❤️",)
+st.title("Women's 3 Variable 30-Year :heart:     Risk Estimator " )
 
 # Input fields
 hsCRP_input = st.number_input('Enter hsCRP (mg/dL):', min_value=0.0, value=0.0)
@@ -120,12 +123,12 @@ if check_password():
     # Alternative explanation: Odds (expressing risk as "times more likely")
     st.header(" Explanation")
     if biomarkers_in_top_quintile == 1:
-        st.write("Over a 30 year period with 1 biomarker elevated, an individual is 1.38 times more likely to have a major cardiovascular event, 1.54 times more likely to have coronary heart disease, and 1.14 times more likely to have a stroke.")
+        st.write("Over a 30-year period with 1 biomarker elevated, an individual is 1.38 times more likely to have a major cardiovascular event, 1.54 times more likely to have coronary heart disease, and 1.14 times more likely to have a stroke.")
     elif biomarkers_in_top_quintile == 2:
-        st.write("Over a 30 year period with 2 biomarkers elevated, an individual is 1.68 times more likely to have a major cardiovascular event, 1.98 times more likely to have coronary heart disease, and 1.63 times more likely to have a stroke.")
+        st.write("Over a 30-year period with 2 biomarkers elevated, an individual is 1.68 times more likely to have a major cardiovascular event, 1.98 times more likely to have coronary heart disease, and 1.63 times more likely to have a stroke.")
     elif biomarkers_in_top_quintile == 3:
-        st.write("Over a 30 year period with 3 biomarkers elevated, an individual is 3.21 times more likely to have a major cardiovascular event, 4.08 times more likely to have coronary heart disease, and 2.87 times more likely to have a stroke.")
+        st.write("Over a 30-year period with 3 biomarkers elevated, an individual is 3.21 times more likely to have a major cardiovascular event, 4.08 times more likely to have coronary heart disease, and 2.87 times more likely to have a stroke.")
     elif biomarkers_in_top_quintile == 0:
-        st.write("Over a 30 year period with no biomarkers elevated, an individual is at the referent group and has no increased risk of major cardiovascular events, coronary heart disease, or stroke.")
+        st.write("Over a 30-year period with no biomarkers elevated, an individual is at the referent group and has no increased risk of major cardiovascular events, coronary heart disease, or stroke.")
 
 
