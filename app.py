@@ -94,7 +94,9 @@ if check_password():
     st.write(f"Lipoprotein(a) Quintile: **{lipoprotein_a_quintile}**")
     st.write(f"Number of biomarkers in the top quintile: **{biomarkers_in_top_quintile}**")
 
-    st.info("The following hazard ratios are based on the number of biomarkers in the top quintile from [Ridker et al., 2024](https://www-nejm-org.ezproxy.galter.northwestern.edu/doi/full/10.1056/NEJMoa2405182).")
+    st.info("""The following hazard ratios are based on the number of biomarkers in the top quintile from [Ridker et al., 2024](https://www-nejm-org.ezproxy.galter.northwestern.edu/doi/full/10.1056/NEJMoa2405182).
+            See Table S8 in the supplement; follow-up censored at time of first reported statin prescription. 
+            """)
     # Hazard ratios and confidence intervals based on the number of biomarkers in the top quintile
     if biomarkers_in_top_quintile == 0:
         st.write("Referent group: No biomarkers in the top quintile.")
