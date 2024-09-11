@@ -68,7 +68,7 @@ def get_lipoprotein_a_quintile(value):
         return 5
 
 # Streamlit app
-st.title("Women's 3 Variable 30 Year Risk Estimator")
+st.title("Women's 3 Variable 30 Year Risk Estimator :red_heart:" )
 
 # Input fields
 hsCRP_input = st.number_input('Enter hsCRP (mg/dL):', min_value=0.0, value=0.0)
