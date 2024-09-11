@@ -118,12 +118,12 @@ if check_password():
     # Alternative explanation: Odds (expressing risk as "times more likely")
     st.header(" Explanation")
     if biomarkers_in_top_quintile == 1:
-        st.write("With 1 biomarker elevated, you are 1.38 times more likely to have a major cardiovascular event, 1.54 times more likely to have coronary heart disease, and 1.14 times more likely to have a stroke.")
+        st.write("With 1 biomarker elevated, an individual is 1.38 times more likely to have a major cardiovascular event, 1.54 times more likely to have coronary heart disease, and 1.14 times more likely to have a stroke.")
     elif biomarkers_in_top_quintile == 2:
-        st.write("With 2 biomarkers elevated, you are 1.68 times more likely to have a major cardiovascular event, 1.98 times more likely to have coronary heart disease, and 1.63 times more likely to have a stroke.")
+        st.write("With 2 biomarkers elevated, an individual is 1.68 times more likely to have a major cardiovascular event, 1.98 times more likely to have coronary heart disease, and 1.63 times more likely to have a stroke.")
     elif biomarkers_in_top_quintile == 3:
-        st.write("With 3 biomarkers elevated, you are 3.21 times more likely to have a major cardiovascular event, 4.08 times more likely to have coronary heart disease, and 2.87 times more likely to have a stroke.")
+        st.write("With 3 biomarkers elevated, an individual is 3.21 times more likely to have a major cardiovascular event, 4.08 times more likely to have coronary heart disease, and 2.87 times more likely to have a stroke.")
     elif biomarkers_in_top_quintile == 0:
-        st.write("With no biomarkers elevated, you are at the referent group and have no increased risk of major cardiovascular events, coronary heart disease, or stroke.")
+        st.write("With no biomarkers elevated, an individual is at the referent group and has no increased risk of major cardiovascular events, coronary heart disease, or stroke.")
 
 
