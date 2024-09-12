@@ -105,12 +105,14 @@ if check_password():
         st.write(f":green[**Number of biomarkers in quintile 5:**] :red[**{biomarkers_in_top_quintile}**]")
         
     with col2:
+        
+        # Hazard ratios and confidence intervals based on the number of biomarkers in the top quintile
+        st.header("Hazard Ratios (HR) and 95% Confidence Intervals (CI)")
 
         st.info("""The following hazard ratios are based on the number of biomarkers in the top quintile from [Ridker et al., 2024](https://www.nejm.org/doi/full/10.1056/NEJMoa2405182).
                 See Table S8 in the supplement; follow-up censored at time of first reported statin prescription. 
                 """)
-        # Hazard ratios and confidence intervals based on the number of biomarkers in the top quintile
-        st.header("Hazard Ratios (HR) and 95% Confidence Intervals (CI)")
+
         if biomarkers_in_top_quintile == 0:
             st.write("Referent group: No biomarkers in the top quintile.")
             st.write("First Major Cardiovascular Event: HR=1.0 (referent)")
@@ -133,14 +135,14 @@ if check_password():
         # Alternative explanation: Odds (expressing risk as "times more likely")
         st.header(" Explanation")
         st.info(f"""Based on the paper by [Ridker et al., 2024](https://www.nejm.org/doi/full/10.1056/NEJMoa2405182), the following research informed risk estimates are provided for discussion of 30 year future cardiovascular risk for women
-                for an hsCRP of :red[{hsCRP_input}], an LDL of :red[{ldl_input}], and a Lp(a) of :red[{lipoprotein_a_input}]:""")
+                with an hsCRP of :red[{hsCRP_input}], an LDL of :red[{ldl_input}], and a Lp(a) of :red[{lipoprotein_a_input}]:""")
         if biomarkers_in_top_quintile == 1:
-            st.success("Over a 30-year period with 1 biomarker elevated, an individual is :red[1.38] times more likely to have a major cardiovascular event, :red[1.54] times more likely to have coronary heart disease, and :red[1.14] times more likely to have a stroke.")
+            st.success("Over a 30-year period with 1 biomarker elevated to the 5th quintile, an individual is :red[1.38] times more likely to have a major cardiovascular event, :red[1.54] times more likely to have coronary heart disease, and :red[1.14] times more likely to have a stroke.")
         elif biomarkers_in_top_quintile == 2:
-            st.success("Over a 30-year period with 2 biomarkers elevated, an individual is :red[1.68] times more likely to have a major cardiovascular event, :red[1.98] times more likely to have coronary heart disease, and :red[1.63] times more likely to have a stroke.")
+            st.success("Over a 30-year period with 2 biomarkers elevated to the 5th quintile, an individual is :red[1.68] times more likely to have a major cardiovascular event, :red[1.98] times more likely to have coronary heart disease, and :red[1.63] times more likely to have a stroke.")
         elif biomarkers_in_top_quintile == 3:
-            st.success("Over a 30-year period with 3 biomarkers elevated, an individual is :red[3.21] times more likely to have a major cardiovascular event, :red[4.08] times more likely to have coronary heart disease, and :red[2.87] times more likely to have a stroke.")
+            st.success("Over a 30-year period with 3 biomarkers elevated to the 5th quintile, an individual is :red[3.21] times more likely to have a major cardiovascular event, :red[4.08] times more likely to have coronary heart disease, and :red[2.87] times more likely to have a stroke.")
         elif biomarkers_in_top_quintile == 0:
-            st.success("Over a 30-year period with no biomarkers elevated, an individual has :red[no increased risk] beyond the referent group for major cardiovascular events, coronary heart disease, or stroke.")
+            st.success("Over a 30-year period with no biomarkers elevated to the 5th quintile, an individual has :red[no increased risk] beyond the referent group for major cardiovascular events, coronary heart disease, or stroke.")
 
 
